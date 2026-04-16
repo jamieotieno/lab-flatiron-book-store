@@ -51,3 +51,27 @@ const bookStoreTitle = document.querySelector('#header');
 // Change element to match bookstore name
     bookStoreTitle.textContent = bookStore.name;
 
+// Loop through every book element
+    const bookList = document.querySelector('#book-list');
+
+    bookStore.books.forEach(books => {
+      // Create elements
+      const bookContainer = document.createElement('li');
+      const bookTitle = document.createElement('h3');
+      const bookAuthor = document.createElement('p');
+      const bookImage = document.createElement('img');
+
+      // Set content
+      bookTitle.textContent = books.title;
+      bookAuthor.textContent = books.author;
+      bookImage.src = books.imageUrl;
+      bookImage.alt = books.title;
+
+      // Append elements to container
+      bookContainer.appendChild(bookImage);
+      bookContainer.appendChild(bookTitle);
+      bookContainer.appendChild(bookAuthor);
+
+      // Append container to list
+      bookList.appendChild(bookContainer);
+    });
