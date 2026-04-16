@@ -45,3 +45,9 @@ const bookStore = {
 
 // Write your code here!
 
+//Select header
+const bookStoreTitle = document.querySelector('#header');
+
+// Change element to match bookstore name
+    bookStoreTitle.textContent = bookStore.name;
+
